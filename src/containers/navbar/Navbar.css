@@ -7,7 +7,7 @@ body {
   --darkGray: #474b4f;
   --lightGray: #6b6e70;
 
-  font-family: Montserrat;
+  font-family: 'Montserrat', sans-serif;
   font-size: 0.813rem;
   font-weight: normal;
   font-stretch: normal;
@@ -40,6 +40,7 @@ body {
 
 .navigation-menu ul {
   display: flex;
+  margin: 0;
   padding: 0;
 }
 
@@ -51,6 +52,8 @@ body {
   /* removes default disc bullet for li tags and applies margin to left & right side */
   list-style-type: none;
   margin: 0 1rem;
+  display: flex;
+  align-items: center;
 }
 
 .navigation-menu li a {
@@ -63,7 +66,6 @@ body {
 }
 
 #books {
-
   letter-spacing: 1.9px;
 }
 
