@@ -5,8 +5,6 @@ import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
 const BookCard = (props) => {
-  console.log('props');
-  console.log(props);
   const { mockBook } = props;
   const {
     schoolOf, title, author, percentComplete, currentChapter,
@@ -29,15 +27,15 @@ const BookCard = (props) => {
       <div className="bookMiddle">
         <div className="circularProgressbar"><CircularProgressbar value={percentComplete} text={`${percentComplete}%`} /></div>
         <div className="percentComplete">
-          <span>{`${percentComplete}%`}</span>
-          <span>Completed</span>
+          <span className="percent">{`${percentComplete}%`}</span>
+          <span className="completed">Completed</span>
         </div>
       </div>
       <div className="bookRight">
-        <span className="Current-Chapter">
-          Current Chapter
+        <span className="currentChapter">
+          CURRENT CHAPTER
         </span>
-        <span className="currentChapter">{currentChapter}</span>
+        <span className="ccValue">{currentChapter}</span>
         <span className="updateProgress">
           UPDATE PROGRESS
         </span>

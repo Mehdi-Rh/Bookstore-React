@@ -1,7 +1,8 @@
 import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import BookCard from './bookCard/BookCard';
-import NewBookContainer from './newBook/NewBookContainer';
+import BookCard from '../../components/bookCard/BookCard';
+import NBContainer from '../newBook/NBContainer';
+import './BookCardContainer.css';
 
 const BookCardContainer = () => {
   const mockBookList = [
@@ -10,15 +11,15 @@ const BookCardContainer = () => {
       schoolOf: 'Action',
       title: 'The Hunger Games',
       author: 'Suzanne Collins',
-      percentComplete: '50',
-      currentChapter: 'Chapter 9',
+      percentComplete: '64',
+      currentChapter: 'Chapter 17',
     },
     {
       id: uuidv4(),
       schoolOf: 'Science Fiction',
       title: 'Dune',
       author: 'Frank Herbert',
-      percentComplete: '1',
+      percentComplete: '8',
       currentChapter: 'Chapter 1',
     },
     {
@@ -50,7 +51,8 @@ const BookCardContainer = () => {
       <div>
         { bookShow }
       </div>
-      <NewBookContainer />
+      <div className="line" />
+      <NBContainer />
     </div>
 
   );

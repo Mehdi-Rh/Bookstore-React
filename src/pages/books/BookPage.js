@@ -1,5 +1,5 @@
 import React from 'react';
-import BookCardContainer from '../../components/bookCardContainer/BookCardContainer';
+import BookCardContainer from '../../containers/bookCardContainer/BookCardContainer';
 
 const BookPage = () => (
   <BookCardContainer />
