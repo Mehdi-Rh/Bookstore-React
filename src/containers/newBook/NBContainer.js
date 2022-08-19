@@ -1,6 +1,6 @@
 import React from 'react';
 import AddNewBook from '../../components/addNBInput/AddNBInput';
-import SelectCategory from '../../components/selectAuthor/SelectAuthor';
+import SelectAuthor from '../../components/selectAuthor/SelectAuthor';
 import AddNBButton from '../../components/addNBButton/AddNBButton';
 import './NBContainer.css';
 
@@ -10,7 +10,7 @@ const NBContainer = () => (
     <div id="addBook">
       <AddNewBook />
 
-      <SelectCategory />
+      <SelectAuthor />
       <AddNBButton />
     </div>
   </div>

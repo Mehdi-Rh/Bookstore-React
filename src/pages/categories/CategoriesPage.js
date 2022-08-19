@@ -1,7 +1,7 @@
 import React from 'react';
 
-const AuthorsPage = () => (
+const CategoriesPage = () => (
   <button type="button">Check status</button>
 );
 
-export default AuthorsPage;
+export default CategoriesPage;

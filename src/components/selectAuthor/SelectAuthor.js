@@ -3,7 +3,7 @@ import './SelectAuthor.css';
 import Dropdown from 'react-bootstrap/Dropdown';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const SelectCategory = () => (
+const SelectAuthor = () => (
 
   <Dropdown>
     <Dropdown.Toggle variant="Info" id="lessonPanel">
@@ -16,4 +16,4 @@ const SelectCategory = () => (
   </Dropdown>
 );
 
-export default SelectCategory;
+export default SelectAuthor;
