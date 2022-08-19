@@ -37,6 +37,9 @@ To get a local copy up and running follow these simple example steps.
 
 ### Usage
 
+npm i
+npm start
+
 ### Run tests
 
 ### Deployment
