@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Roboto+Slab:wght@300;400;500&family=Roboto:wght@300;900&display=swap');
+
+* {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+}
+
+.bookCard {
+  height: 10.625rem;
+  margin: 2.313rem 5% 0;
+  padding: 0 2rem;
+  border-radius: 4px;
+  border: solid 1px #e8e8e8;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Left */
+.bookLeft {
+  display: flex;
+  flex-direction: column;
+}
+
+.bookInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.bookFunctionality {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.schoolOf {
+  width: max-content;
+  height: 1.125rem;
+  margin: 0 2.438rem 0 0;
+  opacity: 0.5;
+  font-size: 0.875rem;
+  color: #121212;
+}
+
+.title {
+  width: max-content;
+  height: 1.813rem;
+  font-size: 1.375rem;
+  font-weight: bold;
+  letter-spacing: -0.2px;
+  color: #121212;
+}
+
+.author {
+  width: 6.688rem;
+  height: 1.188rem;
+  margin: 0.25rem 0 0;
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: #4386bf;
+}
+
+.bookFunctionality > * {
+  width: 4.563rem;
+  height: 1.188rem;
+  margin: 0.188rem 0.938rem 0.125rem 0;
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: #4386bf;
+}
+
+/* Middle */
+.bookMiddle {
+  display: flex;
+}
+
+.circularProgressbar {
+  width: 4.25rem;
+  height: 4.25rem;
+}
+
+.percentComplete {
+  display: flex;
+  flex-direction: column;
+}
+
+.percent {
+  width: 4.25rem;
+  height: 2.438rem;
+  margin: 0.063rem 5.75rem 0 0.688rem;
+  font-size: 2rem;
+  font-weight: normal;
+}
+
+.completed {
+  width: 5rem;
+  height: 1.125rem;
+  margin: 0.438rem 4.938rem 0.75rem 0.75rem;
+  opacity: 0.5;
+  font-size: 0.875rem;
+  font-weight: normal;
+}
+
+/* Right */
+.bookRight {
+  display: flex;
+  flex-direction: column;
+}
+
+.currentChapter {
+  width: 7.875rem;
+  height: 1.125rem;
+  margin: 0.063rem 3.625rem 0 3.688rem;
+  opacity: 0.5;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.813rem;
+  font-weight: 300;
+}
+
+.ccValue {
+  width: 4.688rem;
+  height: 1.313rem;
+  margin: 0.438rem 6.813rem 0.25rem 3.688rem;
+  font-family: 'Poppins', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: -0.4px;
+  color: #121212;
+}
+
+.Update-progress {
+  width: 8.938rem;
+  height: 1.125rem;
+  font-size: 0.813rem;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: #fff;
+}
+
+.updateProgress {
+  font-size: 0.813rem;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: #fff;
+  width: calc(5rem + 20%);
+  height: 2.063rem;
+  margin: 0.75rem 0 0.563rem 3.688rem;
+  padding: 0.438rem 1.188rem 0.5rem 1.375rem;
+  border-radius: 3px;
+  background-color: #0290ff;
+  display: flex;
+  align-items: center;
+}

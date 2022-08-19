@@ -1,0 +1,170 @@
+body {
+  --grText: #61892f;
+  --blueDark: #4386bf;
+  --blue: #0290ff;
+  --grLight: #e5f6df;
+  --black: #121212;
+  --darkGray: #474b4f;
+  --lightGray: #6b6e70;
+
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.813rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+}
+
+.navigation {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 0.5rem 5%;
+  border-bottom: solid 0.125rem #e8e8e8;
+}
+
+.brand-name {
+  text-decoration: none;
+  color: var(--blue);
+  font-weight: 900;
+  font-size: 1.3rem;
+  width: 20%;
+}
+
+.navigation-menu {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+}
+
+.navigation-menu ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.navigation-menu span {
+  align-self: center;
+}
+
+.navigation-menu li {
+  /* removes default disc bullet for li tags and applies margin to left & right side */
+  list-style-type: none;
+  margin: 0 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.navigation-menu li a {
+  /* increases the surface area of the anchor tag to span more than just the anchor text */
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  color: var(--black);
+  font-weight: 900;
+}
+
+#books {
+  letter-spacing: 1.9px;
+}
+
+#categories {
+  opacity: 0.5;
+  letter-spacing: 1.9px;
+}
+
+.navigation-menu li a:hover {
+  color: var(--blue);
+}
+
+.user-icon {
+  width: 2.813rem;
+  height: 2.813rem;
+  border: solid 1px #e8e8e8;
+  border-radius: calc(2.813rem);
+  color: var(--blue);
+  background-color: #fff;
+}
+
+.user-icon > svg {
+  height: 1.5em;
+  width: 1.5em;
+}
+
+.hamburger {
+  /* removes default border on button element */
+  border: 0;
+  height: 40px;
+  width: 40px;
+  padding: 0.5rem;
+  border-radius: 50%;
+  background-color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+
+  /* positions the icon to the right and center aligns it vertically */
+  position: absolute;
+  top: 50%;
+  right: 25px;
+  transform: translateY(-50%);
+  display: none;
+}
+
+.hamburger:hover {
+  background-color: var(--blue);
+}
+
+.hamburger:hover .HamburgerLines {
+  fill: white;
+}
+
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .navigation-menu ul {
+    display: none;
+
+    /*  navigation menu is positioned to start 60px from the top of the document (which is directly below the navbar) */
+    position: absolute;
+    top: 60px;
+    left: 0;
+
+    /*  stacks the li tags vertically */
+    flex-direction: column;
+
+    /*  makes menu span full height and width */
+    width: 100%;
+    height: calc(100vh - 77px);
+    background-color: var(--lightGray);
+    border-top: 1px solid black;
+  }
+
+  .navigation-menu li {
+    /*  centers link text and strips off margin */
+    text-align: center;
+    margin: 0;
+  }
+
+  .navigation-menu li a {
+    color: white;
+
+    /*  increases the surface area of the anchor tag to span the full width of the menu */
+    width: 100%;
+    padding: 1.5rem 0;
+  }
+
+  .navigation-menu li:hover {
+    background-color: #eee;
+  }
+
+  .navigation-menu li a:hover {
+    color: var(--blue);
+  }
+
+  .navigation-menu.expanded ul {
+    display: block;
+  }
+}
