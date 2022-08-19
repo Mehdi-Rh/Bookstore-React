@@ -1,0 +1,32 @@
+#lessonPanel {
+  width: 17.813rem;
+  padding: calc(2.813rem - 48.23px / 2);
+  border: solid 1px #e8e8e8;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#addBook > div {
+  margin-top: 1.188rem;
+}
+
+#titleCategory {
+  width: 4.5rem;
+  height: 1.188rem;
+  margin: 0.438rem 0 0.25rem 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.15px;
+  color: #c7c7c7;
+}
+
+.dropdown-toggle::after {
+  font-size: 1.563rem;
+  color: #c7c7c7;
+}
