@@ -7,14 +7,14 @@ import {
 import './App.css';
 import Navbar from './containers/navbar/Navbar';
 import BookPage from './pages/books/BookPage';
-import CategoriesPage from './pages/categories/CategoriesPage';
+import AuthorsPage from './pages/authors/AuthorsPage';
 
 const App = () => (
   <Router>
     <Navbar />
     <Routes>
       <Route path="/" element={<BookPage />} />
-      <Route path="/calculator" element={<CategoriesPage />} />
+      <Route path="/author" element={<AuthorsPage />} />
     </Routes>
   </Router>
 );
