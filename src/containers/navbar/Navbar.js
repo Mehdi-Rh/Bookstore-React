@@ -45,7 +45,7 @@ const Navbar = () => {
             <Link to="/">BOOKS</Link>
           </li>
           <li id="authors">
-            <Link to="/author">Authors</Link>
+            <Link to="/author">AUTHORS</Link>
           </li>
         </ul>
         <button
