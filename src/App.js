@@ -4,7 +4,8 @@ import {
   Routes,
   Route,
 } from 'react-router-dom';
-import { Provider } from 'react-redux'
+import { Provider } from 'react-redux';
+import store from './redux/configureStore';
 import './App.css';
 import Navbar from './containers/navbar/Navbar';
 import BookPage from './pages/books/BookPage';
