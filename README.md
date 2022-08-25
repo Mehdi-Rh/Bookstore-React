@@ -39,6 +39,11 @@ To get a local copy up and running follow these simple example steps.
 
 npm i
 npm start
+npm i react-router-dom
+npm i react-bootstrap-dropdown
+npm i react-icons
+npm install react-redux
+
 
 ### Run tests
 
@@ -67,7 +72,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
+- Read about the practical aspects of [getting started with Redux](https://redux.js.org/introduction/getting-started) and how to work with it in React applications. Pay attention to the An [Existing React App​ part](https://react-redux.js.org/introduction/getting-started#an-existing-react-app).
 - Inspiration
 - etc
 
