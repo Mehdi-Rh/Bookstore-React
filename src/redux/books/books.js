@@ -3,7 +3,34 @@ import { v4 as uuidv4 } from 'uuid';
 // Action types
 const addBook = 'bookStore/books/addBook';
 const removeBook = 'bookStore/books/removeBook';
-const initialState = [];
+const mockBookList = [
+  {
+    id: uuidv4(),
+    schoolOf: 'Action',
+    title: 'The Hunger Games',
+    author: 'Suzanne Collins',
+    percentComplete: '64',
+    currentChapter: 'Chapter 17',
+  },
+  {
+    id: uuidv4(),
+    schoolOf: 'Science Fiction',
+    title: 'Dune',
+    author: 'Frank Herbert',
+    percentComplete: '8',
+    currentChapter: 'Chapter 1',
+  },
+  {
+    id: uuidv4(),
+    schoolOf: 'Economy',
+    title: 'Capital in the Twenty-First Century',
+    author: 'Suzanne Collins',
+    percentComplete: '0',
+    currentChapter: 'Introduction',
+  },
+];
+
+const initialState = mockBookList;
 
 export const addBookAction = (title, author) => ({
   type: addBook,
@@ -12,7 +39,7 @@ export const addBookAction = (title, author) => ({
     schoolOf: 'Action',
     title,
     author,
-    percentComplete: '0%',
+    percentComplete: 0,
     currentChapter: 'Introduction',
   },
 });
