@@ -1,8 +1,29 @@
 import React from 'react';
+import { PropTypes } from 'prop-types';
 import './AddNBInput.css';
 
-const AddNewBook = () => (
-  <input className="inputNewBook" placeholder="Book title" />
-);
+const AddNBInput = (props) => {
+  const { handleChangeTitle } = props;
+  return (
+    <input
+      id="inputNewBook"
+      placeholder="Book title"
+      onChange={handleChangeTitle}
+    />
+  );
+};
 
-export default AddNewBook;
+export default AddNBInput;
+
+AddNBInput.propTypes = {
+  // eslint-disable-next-line react/require-default-props
+  // eslint-disable-next-line react/no-typos
+  handleChangeTitle: PropTypes.func,
+
+};
+
+AddNBInput.defaultProps = {
+  // eslint-disable-next-line react/require-default-props
+  // eslint-disable-next-line react/no-typos
+  handleChangeTitle: () => { },
+};
