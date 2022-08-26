@@ -1,14 +1,22 @@
 import React from 'react';
-import PropTypes, { string } from 'prop-types';
+import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
 import './BookCard.css';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
+import { removeBookAction } from '../../redux/books/books';
 
 const BookCard = (props) => {
-  const { mockBook } = props;
+  const { book } = props;
   const {
     schoolOf, title, author, percentComplete, currentChapter,
-  } = mockBook;
+  } = book;
+
+  const dispatch = useDispatch();
+  const handleClickRemove = (e) => {
+    e.preventDefault();
+    dispatch(removeBookAction(book.id));
+  };
 
   return (
     <div className="bookCard">
@@ -19,9 +27,15 @@ const BookCard = (props) => {
           <span className="author">{author}</span>
         </div>
         <div className="bookFunctionality">
-          <span>Comment</span>
-          <span>Remove</span>
-          <span>Edit</span>
+          <button type="button">Comment</button>
+          <button
+            type="button"
+            onClick={handleClickRemove}
+            onKeyDown={handleClickRemove}
+          >
+            Remove
+          </button>
+          <button type="button">Edit</button>
         </div>
       </div>
       <div className="bookMiddle">
@@ -45,6 +59,21 @@ const BookCard = (props) => {
 };
 
 BookCard.propTypes = {
-  mockBook: PropTypes.objectOf(string).isRequired,
+  book: PropTypes.func,
+  schoolOf: PropTypes.string,
+  title: PropTypes.string,
+  author: PropTypes.string,
+  currentChapter: PropTypes.string,
+  percentComplete: PropTypes.number,
 };
+
+BookCard.defaultProps = {
+  book: {},
+  schoolOf: 'SchoolOf',
+  title: 'Title',
+  author: 'Author',
+  currentChapter: 'Introduction',
+  percentComplete: 0,
+};
+
 export default BookCard;

@@ -37,6 +37,10 @@
   gap: 0.5rem;
 }
 
+.bookFunctionality button {
+  background-color: transparent;
+}
+
 .schoolOf {
   width: max-content;
   height: 1.125rem;
