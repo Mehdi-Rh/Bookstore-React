@@ -15,7 +15,3 @@
   text-align: center;
   color: #fff;
 }
-
-#addBook > button {
-  padding: auto calc(2.813rem - 31.58px / 2);
-}
