@@ -26,6 +26,7 @@ const BookCard = (props) => {
         </div>
         <div className="bookFunctionality">
           <button type="button">Comment</button>
+          <div className="line_2" />
           <button
             type="button"
             onClick={handleClickRemove}
@@ -33,6 +34,7 @@ const BookCard = (props) => {
           >
             Remove
           </button>
+          <div className="line_2" />
           <button type="button">Edit</button>
         </div>
       </div>
