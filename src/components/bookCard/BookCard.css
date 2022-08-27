@@ -25,6 +25,7 @@
 .bookLeft {
   display: flex;
   flex-direction: column;
+  min-width: 40%;
 }
 
 .bookInfo {
@@ -42,7 +43,6 @@
 }
 
 .title {
-  width: max-content;
   height: 1.813rem;
   font-size: 1.375rem;
   font-weight: bold;
@@ -101,7 +101,6 @@
 }
 
 .percent {
-  width: 4.25rem;
   height: 2.438rem;
   margin: 0.063rem 5.75rem 0 0.688rem;
   font-size: 2rem;
@@ -157,15 +156,14 @@
 
 .updateProgress {
   font-size: 0.813rem;
-  font-weight: 300;
+  font-weight: 600;
   letter-spacing: 0.5px;
   text-align: center;
   color: #fff;
   width: calc(5rem + 20%);
-  height: 2.063rem;
-  margin: 0.75rem 0 0.563rem 3.688rem;
-  padding: 0.438rem 1.188rem 0.5rem 1.375rem;
+  margin: 0.5rem 0 0.563rem 3.688rem;
   border-radius: 3px;
+  padding: 0.5rem 1rem;
   background-color: #0290ff;
   display: flex;
   align-items: center;
