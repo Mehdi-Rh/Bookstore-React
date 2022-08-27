@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import BookCard from '../../components/bookCard/BookCard';
 import NBContainer from '../newBook/NBContainer';
 import './BookCardContainer.css';
-import { addBookAction } from '../../redux/books/books';
+import { addBookAction, getBooksAction } from '../../redux/books/books';
 
 const BookCardContainer = () => {
   const [newTitle, setNewTitle] = useState('');
@@ -42,6 +42,7 @@ const BookCardContainer = () => {
     dispatch(addBookAction(book));
     setNewTitle('');
     setNewAuthor('');
+    dispatch(getBooksAction);
   };
 
   return (

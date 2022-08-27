@@ -16,6 +16,7 @@ const initialState = {
 const bookReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'bookStore/books/getBooks/fulfilled':
+      console.log(action.payload);
       return {
         books: action.payload,
         status: 'Fetch book list succeded',
@@ -57,8 +58,7 @@ export const addBookAction = createAsyncThunk(addBook, async (book) => {
     headers: {
       'Content-Type': 'application/json',
     },
-  })
-    .then((response) => response.json());
+  });
   return book;
 });
 
