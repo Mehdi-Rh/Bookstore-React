@@ -7,18 +7,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const SelectAuthor = (props) => {
   const { handleChangeAuthor } = props;
   return (
-    <div>
-      <select
-        id="fruits"
-        placeholder="Select Author"
-        onChange={handleChangeAuthor}
-      >
-        <option value="none" selected disabled hidden>Select Author</option>
-        <option value="Author_1">Author_1</option>
-        <option value="Author_2">Author_2</option>
-        <option value="Author_3">Author_3</option>
-      </select>
-    </div>
+    <input
+      id="lessonPanel"
+      placeholder="Add author"
+      onChange={handleChangeAuthor}
+    />
   );
 };
 

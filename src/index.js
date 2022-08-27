@@ -2,11 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 import store from './redux/configureStore';
+import { getBooksAction } from './redux/books/books';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+store.dispatch(getBooksAction());
+
 root.render(
   <Provider store={store}>
     <React.StrictMode>
