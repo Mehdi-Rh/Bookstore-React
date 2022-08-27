@@ -28,20 +28,13 @@ const bookReducer = (state = initialState, action) => {
 
     case 'bookStore/books/removeBook/fulfilled':
       return {
-        books: state.books.filter((item) => item.id !== action.id),
+        books: state.books.filter((item) => item.item_id !== action.payload),
         status: 'Delete book succeded',
       };
     default:
       return state;
   }
 };
-
-// const options = {method: 'GET'};
-
-// fetch('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/JUWUUSwLtCmHou4Ag9hk/books', options)
-//   .then(response => response.json())
-//   .then(response => console.log(response))
-//   .catch(err => console.error(err));
 
 export const getBooksAction = createAsyncThunk(getBooks, async () => {
   const response = await fetch(`${baseUrl}/apps/${apiId}/books`);
@@ -57,18 +50,6 @@ export const getBooksAction = createAsyncThunk(getBooks, async () => {
   return arrayData || [];
 });
 
-// const options = {
-//   method: 'POST',
-//   headers: { 'content-type': 'application/json' },
-//   body: '{"item_id":"item2",
-// "title":"The Great Mehdi","author":"Martin Adas","category":"Action"}',
-// };
-
-// fetch('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/JUWUUSwLtCmHou4Ag9hk/books', options)
-//   .then((response) => response.json())
-//   .then((response) => console.log(response))
-//   .catch((err) => console.error(err));
-
 export const addBookAction = createAsyncThunk(addBook, async (book) => {
   await fetch(`${baseUrl}/apps/${apiId}/books`, {
     method: 'POST',
@@ -77,27 +58,11 @@ export const addBookAction = createAsyncThunk(addBook, async (book) => {
       'Content-Type': 'application/json',
     },
   })
-    .then((response) => response.json())
-    .then((response) => console.log(response))
-    .catch((err) => console.error(err));
+    .then((response) => response.json());
   return book;
 });
 
-/*
-{
-  "item_id": "item2",
-  "title": "The Great Mehdi",
-  "author": "Martin Adas",
-  "category": "Action"
-}
-*/
-
-export const removeBookAction = (id) => ({
-  type: removeBook,
-  id,
-});
-
-export const deleteBook = createAsyncThunk(removeBook, async (id) => {
+export const removeBookAction = createAsyncThunk(removeBook, async (id) => {
   await fetch(`${baseUrl}/apps/${apiId}/books/${id}`, {
     method: 'DELETE',
     body: JSON.stringify({

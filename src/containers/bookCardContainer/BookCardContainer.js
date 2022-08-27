@@ -11,10 +11,10 @@ const BookCardContainer = () => {
   const [newAuthor, setNewAuthor] = useState('');
   const [bookShow, setBookShow] = useState([]);
 
-  const BookList = useSelector((state) => state.books.books);
-  // const bookShow = ([] || BookList.map((book) => <BookCard key={book.item_id} book={book} />));
+  const BookList = useSelector((state) => state.books);
+
   useEffect(() => {
-    setBookShow((BookList.map((book) => <BookCard key={book.item_id} book={book} />)));
+    setBookShow((BookList.books.map((book) => <BookCard key={book.item_id} book={book} />)));
   }, [BookList]);
 
   const handleChangeTitle = (e) => {
@@ -39,12 +39,9 @@ const BookCardContainer = () => {
       category: 'Fiction',
     };
 
-    console.log('book');
-    console.log(book);
-
     dispatch(addBookAction(book));
-    // setNewTitle('');
-    // setNewAuthor('');
+    setNewTitle('');
+    setNewAuthor('');
   };
 
   return (
@@ -57,6 +54,7 @@ const BookCardContainer = () => {
         handleChangeTitle={handleChangeTitle}
         handleChangeAuthor={handleChangeAuthor}
         newAuthor={newAuthor}
+        newTitle={newTitle}
         handleClick={handleClick}
       />
     </div>

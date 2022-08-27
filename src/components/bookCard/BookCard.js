@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import './BookCard.css';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
-import { removeBookAction } from '../../redux/books/books';
+import { removeBookAction, getBooksAction } from '../../redux/books/books';
 
 const BookCard = (props) => {
   const { book } = props;
@@ -14,6 +14,7 @@ const BookCard = (props) => {
   const handleClickRemove = (e) => {
     e.preventDefault();
     dispatch(removeBookAction(id));
+    dispatch(getBooksAction());
   };
 
   return (
