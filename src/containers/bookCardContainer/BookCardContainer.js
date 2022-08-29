@@ -1,29 +1,48 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import { useSelector, useDispatch } from 'react-redux';
 import BookCard from '../../components/bookCard/BookCard';
 import NBContainer from '../newBook/NBContainer';
 import './BookCardContainer.css';
-import { addBookAction } from '../../redux/books/books';
+import { addBookAction, getBooksAction } from '../../redux/books/books';
 
 const BookCardContainer = () => {
-  const mockBookList = useSelector((state) => state.books);
+  const [newTitle, setNewTitle] = useState('');
+  const [newAuthor, setNewAuthor] = useState('');
+  const [bookShow, setBookShow] = useState([]);
 
-  const bookShow = mockBookList.map((book) => <BookCard key={book.id} book={book} />);
+  const BookList = useSelector((state) => state.books);
 
-  let newTitle; let newAuthor;
+  useEffect(() => {
+    setBookShow((BookList.books.map((book) => <BookCard key={book.item_id} book={book} />)));
+  }, [BookList]);
+
   const handleChangeTitle = (e) => {
     e.preventDefault();
-    newTitle = e.target.value;
+    setNewTitle(e.target.value);
   };
   const handleChangeAuthor = (e) => {
     e.preventDefault();
-    newAuthor = e.target.value;
+    setNewAuthor(e.target.value);
   };
 
   const dispatch = useDispatch();
+
   const handleClick = (e) => {
     e.preventDefault();
-    dispatch(addBookAction(newTitle, newAuthor));
+    if (newTitle.trim().length === 0 || newAuthor.trim().length === 0) return;
+
+    const book = {
+      item_id: uuidv4(),
+      title: newTitle,
+      author: newAuthor,
+      category: 'Fiction',
+    };
+
+    dispatch(addBookAction(book));
+    setNewTitle('');
+    setNewAuthor('');
+    dispatch(getBooksAction);
   };
 
   return (
@@ -36,6 +55,7 @@ const BookCardContainer = () => {
         handleChangeTitle={handleChangeTitle}
         handleChangeAuthor={handleChangeAuthor}
         newAuthor={newAuthor}
+        newTitle={newTitle}
         handleClick={handleClick}
       />
     </div>

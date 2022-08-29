@@ -7,14 +7,14 @@ import './NBContainer.css';
 
 const NBContainer = (props) => {
   const {
-    handleChangeTitle, handleChangeAuthor, newAuthor, handleClick,
+    handleChangeTitle, handleChangeAuthor, newAuthor, newTitle, handleClick,
   } = props;
 
   return (
     <div id="newBook">
       <h1 className="addBookH1">ADD NEW BOOK</h1>
       <div id="addBook">
-        <AddNBInput handleChangeTitle={handleChangeTitle} />
+        <AddNBInput handleChangeTitle={handleChangeTitle} newTitle={newTitle} />
         <SelectAuthor handleChangeAuthor={handleChangeAuthor} newAuthor={newAuthor} />
         <AddNBButton handleClick={handleClick} />
       </div>
@@ -31,6 +31,7 @@ NBContainer.propTypes = {
   handleChangeAuthor: PropTypes.func,
   handleClick: PropTypes.func,
   newAuthor: PropTypes.string,
+  newTitle: PropTypes.string,
 };
 
 NBContainer.defaultProps = {
@@ -40,4 +41,5 @@ NBContainer.defaultProps = {
   handleChangeAuthor: () => { },
   handleClick: () => { },
   newAuthor: 'Select Author',
+  newTitle: '',
 };
